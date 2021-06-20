@@ -3,13 +3,13 @@ import 'package:my_simple_app/language_page.dart';
 import 'language_pack.dart';
 import 'dart:io'; //for exit(0)
 
-class WelocmePage extends StatelessWidget {
-  int language_index = 1;
+class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final int languageIndex = ModalRoute.of(context)!.settings.arguments as int;
     return Scaffold(
       appBar: AppBar(
-        title: Text(Strings.welcomePage[language_index]),
+        title: Text(Strings.welcomePage[languageIndex]),
       ),
       body: Center(
           child: Column(
@@ -17,7 +17,7 @@ class WelocmePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           ElevatedButton(
-            child: Text(Strings.startGame[language_index]),
+            child: Text(Strings.startGame[languageIndex]),
             onPressed: () {
               Navigator.push(
                 context,
@@ -26,7 +26,7 @@ class WelocmePage extends StatelessWidget {
             },
           ),
           ElevatedButton(
-            child: Text(Strings.settings[language_index]),
+            child: Text(Strings.settings[languageIndex]),
             onPressed: () {
               Navigator.push(
                 context,
@@ -35,7 +35,7 @@ class WelocmePage extends StatelessWidget {
             },
           ),
           ElevatedButton(
-            child: Text(Strings.exit[language_index]),
+            child: Text(Strings.exit[languageIndex]),
             onPressed: () => exit(0),
           ),
         ],

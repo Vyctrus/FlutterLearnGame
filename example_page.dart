@@ -27,7 +27,7 @@ class FirstRoute extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => WelocmePage()),
+                MaterialPageRoute(builder: (context) => WelcomePage()),
               );
             },
           ),

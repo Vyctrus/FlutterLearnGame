@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'language_pack.dart';
+import 'welcome_page.dart';
 
 class LanguagePage extends StatefulWidget {
   //int language_index = 1;
@@ -54,6 +55,18 @@ class _LanguageState extends State<LanguagePage> {
             child: Text(Strings.langPl[languageIndex]),
             onPressed: () {
               changePl();
+            },
+          ),
+          ElevatedButton(
+            child: Text(Strings.startGame[languageIndex]),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => WelcomePage(),
+                  settings: RouteSettings(arguments: languageIndex),
+                ),
+              );
             },
           ),
         ],
